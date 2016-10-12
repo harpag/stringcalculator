@@ -66,4 +66,9 @@ public class CalculatorTest {
     public void testMultipleBiggerNumbers(){
     	assertEquals(1008, Calculator.add("1001,2,6,1000,1500"));
     }
+
+    @Test
+    public void testAllowOtherDelimiters(){
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 }
