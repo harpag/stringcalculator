@@ -61,4 +61,9 @@ public class CalculatorTest {
     public void testBiggerNumbers(){
     	assertEquals(2, Calculator.add("1001,2"));
     }
+
+    @Test
+    public void testMultipleBiggerNumbers(){
+    	assertEquals(1008, Calculator.add("1001,2,6,1000,1500"));
+    }
 }
