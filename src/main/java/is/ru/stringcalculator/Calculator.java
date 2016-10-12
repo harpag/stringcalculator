@@ -45,7 +45,12 @@ public class Calculator {
     	String[] all = splitNumbers(number);
     	for(int i = 0; i < all.length; i++){
     		if(isNegative(all[i])){
-    			negatives = negatives + all[i];
+    			if(isNegative(negatives)){
+    				negatives = negatives + "," + all[i];
+    			}
+    			else{
+    				negatives = negatives + all[i];
+    			}
     		}
     	}
     	return negatives;
