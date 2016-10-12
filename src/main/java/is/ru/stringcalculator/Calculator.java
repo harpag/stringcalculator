@@ -3,12 +3,15 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String text){
+		
+		if(isNegative(text))
+		{
+			String negativeNumbers = allNegatives(text);
+			throw new RuntimeException("Negatives not allowed: " + negativeNumbers);
+		}
+
 		if(text.equals("")){
 			return 0;
-		}
-		else if(isNegative(text))
-		{
-			return -1;
 		}
 		else if(text.contains(",") || text.contains("\\n")){
 			return sum(splitNumbers(text));
@@ -35,6 +38,17 @@ public class Calculator {
 
     private static boolean isNegative(String numbers){
     	return numbers.contains("-");
+    }
+
+    private static String allNegatives(String number){
+    	String negatives = "";
+    	String[] all = splitNumbers(number);
+    	for(int i = 0; i < all.length; i++){
+    		if(isNegative(all[i])){
+    			negatives = negatives + all[i];
+    		}
+    	}
+    	return negatives;
     }
 
 }
