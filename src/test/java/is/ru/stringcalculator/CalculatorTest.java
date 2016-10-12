@@ -71,4 +71,9 @@ public class CalculatorTest {
     public void testAllowOtherDelimiters(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
+
+    @Test
+    public void testThirdDelimiters(){
+    	assertEquals(5, Calculator.add("//_\n1_4"));
+    }
 }
