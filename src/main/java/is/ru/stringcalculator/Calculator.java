@@ -25,7 +25,6 @@ public class Calculator {
 			if(text.contains("//")){
 				String[] arg = text.split("\\n");
 				String delimeter = String.valueOf(arg[0].charAt(2));
-				System.out.println("test");
 				return sum(splitNumbers(arg[1],delimeter));
 			}
 		 	else if(text.contains(",") || text.contains("\\n")){
